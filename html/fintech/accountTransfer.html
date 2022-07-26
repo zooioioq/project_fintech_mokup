@@ -1,0 +1,155 @@
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      /* layout ------------------------------ */
+      #wrap {
+        width : 370px;
+        height : 780px;
+        margin : auto;
+        background-image: url("../../asset/phone.png");
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .display {
+        position: relative;
+        width : 320px;
+        height : 670px;
+        margin : auto;
+        padding-top : 50px;
+        background-image : url("../../asset/accountTransferDetails.jpg");
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size : contain;
+      }
+      .display > div {
+        position: absolute;
+      }
+      .display > div > a {
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+      /* WNav ------------------------------ */
+      .WNav {
+        top : 20%;
+        width : 30%;
+        height : 30px;
+      }
+      .WNav.account {
+        left : 5%;
+      }
+      .WNav.limePay {
+        left : 50%;
+        transform: translate(-50%, 0);
+      }
+      .WNav.limeWallet {
+        right : 5%;
+      }
+      /* transfer ------------------------------ */
+      .charging {
+        top : 29%;
+        width : 49%;
+        height: 100px;
+      }
+      .transfer {
+        top : 47%;
+        left : 4%;
+        width : 10%;
+        height : 30px;
+      }
+      .transferList {
+        width : 100%;
+        height: 40%;
+        bottom : 7.5%;
+      }
+      .branch {
+        top : 11%;
+        right : 0;
+        width : 50px;
+        height: 50px;
+      }
+      /* nav ------------------------------ */
+      .nav {
+        bottom : 0;
+        width : 50px;
+        height: 48px;
+      }
+      .friends_list {
+        left : 20px;
+      }
+      .chat_list {
+        left : 100px;
+      }
+      .wallet {
+        right : 85px;
+      }
+    </style>
+
+    <title> lime fintech mokup </title>
+  </head>
+
+
+
+
+
+  <body>
+
+
+    <!-- wrap -->
+    <div id="wrap">
+
+      <!-- display -->
+      <div class="display">
+
+        <!-- account -->
+        <div class="WNav account"><a href="#"></a></div>
+        <!-- // account -->
+
+        <!-- limePay -->
+        <div class="WNav limePay"><a href="../common/wallet.html"></a></div>
+        <!-- // limePay -->
+
+        <!-- limeWallet -->
+        <div class="WNav limeWallet"><a href="./limeWallet.html"></a></div>
+        <!-- // limeWallet -->
+
+        <!-- charging -->
+        <div class="charging"><a href="charging01.html"></a></div>
+        <!-- // charging -->
+
+        <!-- branch -->
+        <div class="branch"><a href="./branch01.html"></a></div>
+        <!-- // branch -->
+
+        <!-- transfer -->
+        <div class="transfer"><a href="./account.html"></a></div>
+        <!-- // transfer -->
+
+        <!-- transferList -->
+        <div class="transferList"><a href="./transferList.html"></a></div>
+        <!-- // transferList -->
+
+        <!-- nav -->
+        <div class="nav friends_list"><a href="../common/friends_list.html"></a></div>
+        <div class="nav chat_list"><a href="../common/chat_list.html"></a></div>
+        <div class="nav wallet"><a href="#"></a></div>
+        <!-- // nav -->
+
+      </div>
+      <!-- // display -->
+
+    </div>
+    <!-- // wrap -->
+
+
+    <script>
+    </script>
+
+
+  </body>
+</html>

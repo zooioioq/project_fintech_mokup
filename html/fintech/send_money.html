@@ -1,0 +1,229 @@
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      #wrap {
+        width : 370px;
+        height : 780px;
+        margin : auto;
+        background-image: url("../../asset/phone.png");
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .display {
+        position: relative;
+        width : 320px;
+        height : 670px;
+        margin : auto;
+        padding-top : 50px;
+        background-image : url("../../asset/send_money_1.jpg");
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size : contain;
+      }
+      .display > div {
+        position: absolute;
+      }
+      .display > div > a {
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+      .layer {
+        display: none;
+        position: relative;
+        width : 100%;
+        height : 93%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+      .layer.act { display: block; }
+      .layer > div {
+        position: absolute;
+        cursor: pointer;
+      }
+      /* layer_1 ------------------------------ */
+      .back {
+        top : 55px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+      }
+      .back > a {
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+      #next_chat_1 {
+        left : 0;
+        bottom : 7%;
+        width : 100%;
+        height : 78%;
+        cursor: pointer;
+      }
+      #next_chat_1 > .chat5 {
+        float: right;
+        width : 166px;
+        height : 32px;
+        margin-top : 121px;
+        margin-right : 20px;
+        background-image: url("../../asset/chat5.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        transition: all 700ms ease;
+        transition-delay: 300ms;
+        opacity: 0;
+      }
+      #next_chat_1.act > .chat5 {
+        opacity: 1;
+      }
+      .layer_2_open {
+        bottom : 4px;
+        left : 14px;
+        width : 40px;
+        height : 40px;
+      }
+      /* layer_2 ------------------------------ */
+      #layer_2 {
+        z-index: 1;
+        background-image: url("../../asset/send_money_2.jpg");
+      }
+      #layer_2 .back {
+        top : 5px;
+      }
+      .next {
+        bottom : 3.7%;
+        right : 10px;
+        width : 50px;
+        height :  60px;
+      }
+      .next > a {
+        display: block;
+        width : 100%;
+        height: 100%;
+      }
+      .layer_3_close {
+        bottom : 17.5%;
+        left : 14px;
+        width : 40px;
+        height : 40px;
+      }
+    </style>
+
+    <title> lime fintech mokup </title>
+  </head>
+
+
+
+
+
+  <body>
+
+
+    <!-- wrap -->
+    <div id="wrap">
+
+
+      <!-- display-->
+      <div class="display">
+
+
+        <!-- layer_1 -->
+        <div class="back">
+          <a href="../common/chat_list.html"></a>
+        </div>
+
+        <div id="next_chat_1" onclick="addAct()">
+          <div class="chat5"></div>
+        </div>
+
+        <div class="layer_2_open" onclick="layer_2_open()"></div>
+        <!-- // layer_1 -->
+
+        
+        <!-- layer_2 -->
+        <div id="layer_2" class="layer">
+          <div class="back">
+            <a href="../common/chat_list.html"></a>
+          </div>
+  
+          <div class="next"><a href="./transfer01.html"></a></div>
+  
+          <div class="layer_2_close" onclick="layer_2_close()"></div>
+        </div>
+        <!-- // layer_2 -->
+
+        
+      </div>
+      <!-- // display -->
+
+      
+    </div>
+    <!-- // wrap -->
+
+
+    <script>
+      function addAct() {
+        var next = document.getElementById('next_chat_1');
+        next.classList.add("act");
+      }
+
+      function layer_2_open() {
+        var layer = document.getElementById("layer_2");
+        layer.classList.add('act');
+      }
+
+      function layer_2_close() {
+        var layer = document.getElementById("layer_2");
+        layer.classList.remove('act');
+      }
+
+      function layer_3_open() {
+        var layer = document.getElementById("layer_3");
+        layer.classList.add('act');
+      }
+
+      function layer_3_close() {
+        var layer = document.getElementById("layer_3");
+        layer.classList.remove('act');
+      }
+
+      function layer_4_open() {
+        var layer = document.getElementById("layer_4");
+        layer.classList.add('act');
+      }
+
+      function layer_5_open() {
+        var layer = document.getElementById("layer_5");
+        layer.classList.add('act');
+      }
+
+      function addAct2() {
+        var next = document.getElementById('next_chat_2');
+        next.classList.add("act");
+      }
+
+      function layer_6_open() {
+        var layer = document.getElementById("layer_6");
+        layer.classList.add('act');
+      }
+
+      function layer_6_close() {
+        var layer = document.getElementById("layer_6");
+        layer.classList.remove('act');
+      }
+
+      function layer_7_open() {
+        var layer = document.getElementById("layer_7");
+        layer.classList.add('act');
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      #wrap {
+        width : 370px;
+        height : 780px;
+        margin : auto;
+        background-image: url("../../asset/phone.png");
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .display {
+        position: relative;
+        width : 320px;
+        height : 670px;
+        margin : auto;
+        padding-top : 50px;
+        background-image : url("../../asset/login.jpg");
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size : contain;
+      }
+      .display > div {
+        position: absolute;
+      }
+      .display > div > a {
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+      .back {
+        top : 55px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+      }
+      .input_area {
+        top : 203px;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 90%;
+        height : auto;
+      }
+      .input_area > input {
+        width : 100%;
+        height : 56px;
+        background-color : transparent;
+        border : 0;
+        border-bottom : 2px solid #fff;
+        color : #fff;
+        transition: all 300ms ease;
+      }
+      .input_area > input::placeholder {
+        color : #d9d9d9;
+      }
+      .input_area > input:focus {
+        outline: 0;
+        border-bottom : 5px solid #fff;
+      }
+      .login {
+        top : 53%;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 90%;
+        height : 45px;
+      }
+      .sns {
+        bottom : 42px;
+        width : 50px;
+        height : 50px;
+      }
+      .google {
+        left : 55px;
+      }
+      .facebook {
+        left : 0;
+        right : 0;
+        margin : auto;
+      }
+      .viber {
+        right : 55px;
+      }
+    </style>
+
+    <title> lime fintech mokup </title>
+  </head>
+
+
+
+
+
+  <body>
+
+
+    <!-- wrap -->
+    <div id="wrap">
+
+      <!-- display -->
+      <div class="display">
+
+        <div class="back">
+          <a href="index_page.html"></a>
+        </div> 
+
+        <div class="input_area">
+          <input type="text" placeholder="아이디를 입력하세요">
+          <input type="text" placeholder="비밀번호를 입력하세요">
+        </div>
+
+        <div class="login">
+          <a href="../common/chat_list.html"></a>
+        </div>
+
+        <div class="sns google">
+          <a href="https://www.google.co.kr"></a>
+        </div>
+
+        <div class="sns facebook">
+          <a href="https://facebook.com/"></a>
+        </div>
+
+        <div class="sns viber">
+          <a href="https://www.viber.com/"></a>
+        </div>
+
+      </div>
+      <!-- // display -->
+
+    </div>
+    <!-- // wrap -->
+
+
+  </body>
+</html>

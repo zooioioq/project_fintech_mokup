@@ -1,0 +1,347 @@
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      /* layout ------------------------------ */
+      #wrap {
+        width : 370px;
+        height : 780px;
+        margin : auto;
+        background-image: url("../../asset/phone.png");
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .display {
+        position: relative;
+        width : 320px;
+        height : 670px;
+        margin : auto;
+        padding-top : 50px;
+        background-image : url("../../asset/make_chatroom_6.jpg");
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size : contain;
+      }
+      .display > div {
+        position: absolute;
+      }
+      div > a {
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+      .layer {
+        display: none;
+        position: relative;
+        width : 100%;
+        height : 93%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+      .layer.act { display: block; }
+      .layer > div {
+        position: absolute;
+        cursor: pointer;
+      }
+      /* layer_1 ------------------------------ */
+      .back {
+        top : 55px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+      }
+      .layer_2_open {
+        left : 0;
+        bottom : 0;
+        width : 100%;
+        height : 85%;
+        cursor: pointer;
+      }
+      /* layer_2 ------------------------------ */
+      #layer_2 {
+        z-index: 1;
+        background-image: url("../../asset/make_chatroom_7.jpg");
+      }
+      #layer_2 .back {
+        top : 5px;
+      }
+      .layer_3_open {
+        top : 7px;
+        right : 12px;
+        width : 30px;
+        height : 30px;
+      }
+      #next {
+        position: relative;
+        margin-top : 15%;
+        width : 100%;
+        height : 85%;
+        cursor: pointer;
+      }
+      #next > div {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        opacity: 0;
+        transition: all 700ms ease;
+      }
+      #next > .chat2 {
+        top : 135px;
+        left : 20px;
+        width : 227px;
+        height : 52px;
+        background-image: url("../../asset/chat2.png");
+        transition-delay: 300ms;
+      }
+      #next > .chat3 {
+        top : 197px;
+        right : 20px;
+        width : 147px;
+        height : 30px;
+        background-image: url("../../asset/chat3.png");
+        transition-delay: 1000ms;
+      }
+      #next.act > div {
+        opacity: 1;
+      }
+      /* layer_3 ------------------------------ */
+      #layer_3 {
+        z-index: 2;
+        background-image: url("../../asset/make_chatroom_8.jpg");
+      }
+      .layer_3_close {
+        bottom : 0;
+        left : 0;
+        width : 30%;
+        height : 100%;
+      }
+      .layer_4_open {
+        bottom : 11%;
+        right : 0;
+        width : 68%;
+        height : 50px;
+      }
+      /* layer_4 ------------------------------ */
+      #layer_4 {
+        z-index: 3;
+        background-image: url("../../asset/make_chatroom_4.jpg");
+      }
+      .layer_4_close {
+        top : 5px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+      }
+      .layer_5_open {
+        bottom : 28%;
+        right : 24px;
+        width : 30px;
+        height : 30px;
+      }
+      /* layer_5 ------------------------------ */
+      #layer_5 {
+        z-index: 4;
+        background-image: url("../../asset/make_chatroom_9.jpg");
+      }
+      .layer_5_close {
+        top : 5px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+      }
+      .layer_6_open {
+        bottom : 6.3%;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 90%;
+        height : 50px;
+      }
+      /* layer_6 ------------------------------ */
+      #layer_6 {
+        z-index: 5;
+        background-image: url("../../asset/make_chatroom_10.jpg");
+      }
+      #layer_6 .back {
+        top : 5px;
+      }
+      #next_ {
+        position: relative;
+        margin-top : 15%;
+        width : 100%;
+        height : 85%;
+        cursor: pointer;
+      }
+      #next_ > div {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        opacity: 0;
+        transition: all 700ms ease;
+      }
+      #next_ > .chat4 {
+        top : 330px;
+        left : 20px;
+        width : 156px;
+        height : 52px;
+        background-image: url("../../asset/chat4.png");
+        transition-delay: 300ms;
+      }
+      #next_.act > div {
+        opacity: 1;
+      }
+    </style>
+
+    <title> lime fintech mokup </title>
+  </head>
+
+
+
+
+
+  <body>
+
+
+    <!-- wrap -->
+    <div id="wrap">
+
+
+      <!-- display -->
+      <div class="display">
+
+
+        <!-- layer_1 -->
+        <div class="back">
+          <a href="../common/chat_list.html"></a>
+        </div>
+        <div class="layer_2_open" onclick="layer_2_open()"></div>
+        <!-- // layer_1 -->
+
+
+        <!-- layer_2 -->
+        <div id="layer_2" class="layer">
+          <div class="back">
+            <a href="../common/chat_list.html"></a>
+          </div>
+  
+          <div class="layer_3_open" onclick="layer_3_open()"></div>
+  
+          <div id="next" onclick="addAct_1()">
+            <div class="chat2"></div>
+            <div class="chat3"></div>
+          </div>
+        </div>
+        <!-- // layer_2 -->
+
+
+        <!-- layer_3 -->
+        <div id="layer_3" class="layer">
+          <div class="layer_3_close" onclick="layer_3_close()"></div>
+          <div class="layer_4_open" onclick="layer_4_open()"></div>
+        </div>
+        <!-- // layer_3 -->
+
+
+        <!-- layer_4 -->
+        <div id="layer_4" class="layer">
+          <div class="layer_4_close" onclick="layer_4_close()"></div>
+          <div class="layer_5_open" onclick="layer_5_open()"></div>
+        </div>
+        <!-- // layer_4 -->
+
+
+        <!-- layer_5 -->
+        <div id="layer_5" class="layer">
+          <div class="layer_5_close" onclick="layer_5_close()"></div>
+          <div class="layer_6_open" onclick="layer_6_open()"></div>
+        </div>
+        <!-- // layer_5 -->
+
+
+        <!-- layer_6 -->
+        <div id="layer_6" class="layer">
+          <div class="back">
+            <a href="../common/chat_list.html"></a>
+          </div>
+          <div id="next_" onclick="addAct_2()">
+            <div class="chat4"></div>
+          </div>
+        </div>
+        <!-- // layer_6 -->
+
+
+      </div>
+      <!-- // display -->
+
+
+    </div>
+    <!-- // wrap -->
+
+
+    <script>
+      function addAct_1() {
+        var next = document.getElementById('next');
+        next.classList.add("act");
+      }
+
+      function layer_2_open() {
+        var layer = document.getElementById("layer_2");
+        layer.classList.add('act');
+      }
+
+      function layer_2_close() {
+        var layer = document.getElementById("layer_2");
+        layer.classList.remove('act');
+      }
+
+      function layer_3_open() {
+        var layer = document.getElementById("layer_3");
+        layer.classList.add('act');
+      }
+
+      function layer_3_close() {
+        var layer = document.getElementById("layer_3");
+        layer.classList.remove('act');
+      }
+
+      function layer_4_open() {
+        var layer = document.getElementById("layer_4");
+        layer.classList.add('act');
+      }
+
+      function layer_4_close() {
+        var layer = document.getElementById("layer_4");
+        layer.classList.remove('act');
+      }
+
+      function layer_5_open() {
+        var layer = document.getElementById("layer_5");
+        layer.classList.add('act');
+      }
+
+      function layer_5_close() {
+        var layer = document.getElementById("layer_5");
+        layer.classList.remove('act');
+      }
+
+      function layer_6_open() {
+        var layer = document.getElementById("layer_6");
+        layer.classList.add('act');
+      }
+
+      function addAct_2() {
+        var next = document.getElementById('next_');
+        next.classList.add("act");
+      }
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,416 @@
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      /* layout ------------------------------ */
+      #wrap {
+        width : 370px;
+        height : 780px;
+        margin : auto;
+        background-image: url("../../asset/phone.png");
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .display {
+        position: relative;
+        width : 320px;
+        height : 670px;
+        margin : auto;
+        padding-top : 50px;
+        background-image : url("../../asset/signup.jpg");
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size : contain;
+      }
+      .display > div {
+        position: absolute;
+      }
+      .display > div > a {
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+      .layer {
+        display: none;
+        position: relative;
+        width : 100%;
+        height : 93%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+      .layer.act { display: block; }
+      .layer > div {
+        position: absolute;
+      }
+      /* layer_1 ------------------------------ */
+      .back {
+        top : 55px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+      }
+      .layer_2_open {
+        top : 48.2%;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 90%;
+        height : 40px;
+        cursor: pointer;
+      }
+      .sns {
+        bottom : 42.5px;
+        width : 50px;
+        height : 50px;
+      }
+      .google {
+        left : 55px;
+      }
+      .facebook {
+        left : 0;
+        right : 0;
+        margin : auto;
+      }
+      .viber {
+        right : 55px;
+      }
+      /* layer_2 ------------------------------ */
+      #layer_2 {
+        z-index: 1;
+        background-image: url("../../asset/signup_detail_01.jpg");
+      }
+      .layer_2_close {
+        top : 5px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+        cursor: pointer;
+      }
+      #layer_2 .input_area {
+        top : 165px;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 87%;
+        height : auto;
+      }
+      #layer_2 .input_area > input {
+        width : 100%;
+        height : 50px;
+        background-color: transparent;
+        border : 0;
+        border-bottom : 2px solid #fff;
+        color : #fff;
+        transition: all 300ms ease;
+      }
+      #layer_2 .input_area > input::placeholder {
+        color : #d9d9d9;
+      }
+      #layer_2 .input_area > input:focus {
+        outline: 0;
+        border-bottom : 5px solid #fff;
+      }
+      input:nth-child(2) {
+        margin-top : 85px;
+      }
+      .layer_3_open {
+        top : 60.4%;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 90%;
+        height : 42px;
+        cursor: pointer;
+      }
+      /* layer_3 ------------------------------ */
+      #layer_3 {
+        z-index: 2;
+        background-image: url("../../asset/signup_detail_02.jpg");
+      }
+      .layer_3_close {
+        top : 5px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+        cursor: pointer;
+      }
+      #layer_3 .input_area {
+        top : 165px;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 85%;
+        height : auto;
+      }
+      #layer_3 .input_area > input {
+        width : 100%;
+        height : 50px;
+        background-color: transparent;
+        border : 0;
+        border-bottom : 2px solid #fff;
+        color : #fff;
+        transition: all 300ms ease;
+      }
+      #layer_3 .input_area > input::placeholder {
+        color : #d9d9d9;
+      }
+      #layer_3 .input_area > input:focus {
+        outline: 0;
+        border-bottom : 5px solid #fff;
+      }
+      input:nth-child(2) {
+        margin-top : 85px;
+      }
+      .layer_4_open {
+        top : 60.8%;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 90%;
+        height : 42px;
+        cursor: pointer;
+      }
+      /* layer_4 ------------------------------ */
+      #layer_4 {
+        z-index: 3;
+        background-image: url("../../asset/signup_detail_03.jpg");
+      }
+      .layer_4_close {
+        top : 5px;
+        left : 15px;
+        width : 40px;
+        height : 40px;
+        cursor: pointer;
+      }
+      #layer_4 .input_area {
+        top : 165px;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 85%;
+        height : auto;
+      }
+      #layer_4 .input_area > input {
+        width : 100%;
+        height : 50px;
+        background-color: transparent;
+        border : 0;
+        border-bottom : 2px solid #fff;
+        color : #fff;
+        transition: all 300ms ease;
+      }
+      #layer_4 .input_area > input::placeholder {
+        color : #d9d9d9;
+      }
+      #layer_4 .input_area > input:focus {
+        outline: 0;
+        border-bottom : 5px solid #fff;
+      }
+      input:nth-child(2) {
+        margin-top : 100px;
+      }
+      .layer_5_open {
+        top : 62.6%;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 90%;
+        height : 42px;
+        cursor: pointer;
+      }
+      .check {
+        top : 25%;
+        right: 5.8%;
+        width : 100px;
+        height : 30px;
+      }
+      .check button {
+        width : 100%;
+        height : 100%;
+        border : 0;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      #check_text {
+        position: absolute;
+        top : 33%;
+        left : 25px;
+        right : 0;
+        font-size : 12px;
+        font-weight: 700;
+        margin : auto;
+        color : rgba(255,255,255,0.7);
+      }
+      /* layer_5 ------------------------------ */
+      #layer_5 {
+        z-index: 4;
+        background-image: url("../../asset/signup_detail_04.jpg");
+      }
+      .login {
+        bottom : 7.2%;
+        left : 0;
+        right : 0;
+        margin : auto;
+        width : 90%;
+        height : 40px;
+      }
+      .login > a {
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+    </style>
+
+    <title> lime fintech mokup </title>
+  </head>
+
+
+
+
+
+  <body>
+
+
+    <!-- wrap -->
+    <div id="wrap">
+
+
+      <!-- display-->
+      <div class="display">
+
+
+        <!-- layer_1 -->
+        <div class="back">
+          <a href="index_page.html"></a>
+        </div>
+
+        <div class="layer_2_open" onclick="layer_2_open()"></div>
+
+        <div class="sns google">
+          <a href="https://www.google.co.kr"></a>
+        </div>
+
+        <div class="sns facebook">
+          <a href="https://facebook.com/"></a>
+        </div>
+
+        <div class="sns viber">
+          <a href="https://www.viber.com/"></a>
+        </div>
+        <!-- // layer_1 -->
+
+
+        <!-- layer_2 -->
+        <div id="layer_2" class="layer">
+          <div class="layer_2_close" onclick="layer_2_close()"></div>
+  
+          <div class="input_area">
+            <input type="text" placeholder="아이디를 입력하세요">
+            <input type="text" placeholder="사용자명을 입력하세요">
+          </div>
+  
+          <div class="layer_3_open" onclick="layer_3_open()"></div>
+        </div>
+        <!-- // layer_2 -->
+
+
+        <!-- layer_3 -->
+        <div id="layer_3" class="layer">
+          <div class="layer_3_close" onclick="layer_3_close()"></div>
+  
+          <div class="input_area">
+            <input type="password" placeholder="비밀번호를 입력하세요">
+            <input type="password" placeholder="비밀번호를 확인합니다">
+          </div>
+  
+          <div class="layer_4_open" onclick="layer_4_open()"></div>
+        </div>
+        <!-- // layer_3 -->
+
+
+        <!-- layer_4 -->
+        <div id="layer_4" class="layer">
+          <div class="layer_4_close" onclick="layer_4_close()"></div>
+  
+          <div class="input_area">
+            <input type="text" placeholder="전화번호를 입력하세요" maxlength="13">
+            <input type="text" placeholder="인증번호를 입력하세요" maxlength="4">
+          </div>
+  
+          <div class="check">
+            <button onclick="check()"></button>
+          </div>
+  
+          <span id="check_text"> </span>
+  
+          <div class="layer_5_open" onclick="layer_5_open()"></div>
+        </div>
+        <!-- // layer_4 -->
+
+
+        <!-- layer_5 -->
+        <div id="layer_5" class="layer">
+          <div class="login">
+            <a href="login.html"></a>
+          </div>
+        </div>
+        <!-- // layer_5 -->
+
+      </div>
+      <!-- // display -->
+
+
+    </div>
+    <!-- // wrap -->
+
+
+    <script>
+      function layer_2_open() {
+        var layer = document.getElementById("layer_2");
+        layer.classList.add('act');
+      }
+
+      function layer_2_close() {
+        var layer = document.getElementById("layer_2");
+        layer.classList.remove('act');
+      }
+
+      function layer_3_open() {
+        var layer = document.getElementById("layer_3");
+        layer.classList.add('act');
+      }
+
+      function layer_3_close() {
+        var layer = document.getElementById("layer_3");
+        layer.classList.remove('act');
+      }
+
+      function layer_4_open() {
+        var layer = document.getElementById("layer_4");
+        layer.classList.add('act');
+      }
+
+      function layer_4_close() {
+        var layer = document.getElementById("layer_4");
+        layer.classList.remove('act');
+      }
+
+      function check() {
+        document.getElementById("check_text").innerHTML = 
+        "인증번호가 발송되었습니다 : )" ;
+      }
+
+      function layer_5_open() {
+        var layer = document.getElementById("layer_5");
+        layer.classList.add('act');
+      }
+    </script>
+
+
+  </body>
+</html>

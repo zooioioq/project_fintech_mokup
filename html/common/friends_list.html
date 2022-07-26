@@ -1,0 +1,417 @@
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      /* layout ------------------------------ */
+      #wrap {
+        width : 370px;
+        height : 780px;
+        margin : auto;
+        background-image: url("../../asset/phone.png");
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .display {
+        position: relative;
+        width : 320px;
+        height : 670px;
+        margin : auto;
+        padding-top : 50px;
+        background-image : url("../../asset/friends_list.jpg");
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size : contain;
+      }
+      .display > div {
+        position: absolute;
+        /* border : 1px solid red; */
+      }
+      .display > div > a {
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+      /* add_friend ------------------------------ */
+      .add_friend {
+        top : 60px;
+        right : 90px;
+        width : 30px;
+        height : 30px;
+        cursor: pointer;
+      }
+      #add_friend_layer {
+        display: none;
+        z-index: 1;
+        width : 100%;
+        height: 93.5%;
+        background-image: url("../../asset/add_friends_1.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+      #add_friend_layer.act { display : block; }
+      .add_back {
+        margin-top : 5px;
+        margin-left : 5px;
+        width : 40px;
+        height : 40px;
+        cursor: pointer;
+      }
+      .add_link {
+        position: relative;
+        width : 100%;
+        height : 50px;
+        margin-top : 20px;
+      }
+      .add_link > a {
+        position: absolute;
+        display: block;
+        width : 50px;
+        height : 100%;
+      }
+      .id { left : 0px; }
+      .phone_num { left : 55px; }
+      .google { left : 125px; }
+      .facebook { right : 72.5px; }
+      .viber { right : 5px; }
+      /* friends ------------------------------ */
+      .friends {
+        left : 0;
+        width : 100%;
+        height : 60px;
+        cursor: pointer;
+      }
+      .nayoung { bottom : 470px; }
+      .ejin { bottom : 410px; }
+      .junho { bottom : 350px; }
+      .seyoung { bottom : 290px; }
+      .areum { bottom : 230px; }
+      .suha { bottom : 170px; }
+      .sejin { bottom : 110px; }
+      .block {
+        bottom : 50px;
+        left : 0;
+        width : 100%;
+        height : 60px;
+        cursor: pointer;
+      }
+      /* profile_layer ------------------------------ */
+      .layer {
+        display: none;
+        position: relative;
+        z-index: 1;
+        width : 100%;
+        height : 93%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .layer a { 
+        display: block;
+        width : 100%;
+        height : 100%;
+      }
+      .layer.act { display: block; }
+      .close_layer {
+        position: absolute;
+        top : 5px;
+        left : 10px;
+        width : 40px;
+        height : 40px;
+        cursor: pointer;
+      }
+      #nayoung_layer {
+        background-image: url("../../asset/nayoung.jpg");
+      }
+      #ejin_layer {
+        background-image: url("../../asset/ejin.jpg");
+      }
+      #junho_layer {
+        background-image: url("../../asset/junho.jpg");
+      }
+      #seyoung_layer {
+        background-image: url("../../asset/seyoung.jpg");
+      }
+      #areum_layer {
+        background-image: url("../../asset/areum.jpg");
+      }
+      #suha_layer {
+        background-image: url("../../asset/suha.jpg");
+      }
+      #sejin_layer {
+        background-image: url("../../asset/sejin.jpg");
+      }
+      .layer > .chat {
+        position: absolute;
+        bottom : 10px;
+        left : 29.5%;
+        width : 50px;
+        height : 70px;
+      }
+      /* block ------------------------------ */
+      #block_layer {
+        display: none;
+        position: relative;
+        z-index: 1;
+        width : 100%;
+        height : 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("../../asset/block_1.jpg");
+      }
+      #block_layer.act { display: block; }
+      .block_back {
+        position: absolute;
+        top : 35%;
+        right : 18.5%;
+        width : 30px;
+        height : 30px;
+        cursor: pointer;
+      }
+      .block_link {
+        position: absolute;
+        bottom : 0;
+        width : 100%;
+        height : 40%;
+      }
+      .block_link > a {
+        display: block;
+        width: 100%;
+        height : 100%;
+      }
+      /* nav ------------------------------ */
+      .nav {
+        bottom : 0;
+        width : 50px;
+        height: 48px;
+      }
+      .friends_list { left : 12.5px; }
+      .chat_list {  left : 92.5px; }
+      .wallet { right : 92.5px; }
+    </style>
+
+    <title> lime fintech mokup </title>
+  </head>
+
+
+
+
+
+  <body>
+
+
+    <!-- wrap -->
+    <div id="wrap">
+
+
+      <!-- display -->
+      <div class="display">
+
+
+        <div class="add_friend" onclick="addLayer()"></div>
+
+
+        <!-- add_friend_layer -->
+        <div id="add_friend_layer">
+          <div class="add_back" onclick="addBack()"></div>
+          <div class="add_link">
+            <a class="id" href="#"></a>
+            <a class="phone_num" href="../friends/add_friends.html"></a>
+            <a class="google" href="https://www.google.co.kr"></a>
+            <a class="facebook" href="https://facebook.com/"></a>
+            <a class="viber" href="https://www.viber.com/"></a>
+          </div>
+        </div>
+        <!-- // add_friend_layer -->
+
+
+        <!-- friends_list -->
+        <div class="friends nayoung" onclick="nayoung_open()"></div>
+        <div class="friends ejin" onclick="ejin_open()"></div>
+        <div class="friends junho" onclick="junho_open()"></div>
+        <div class="friends seyoung" onclick="seyoung_open()"></div>
+        <div class="friends areum" onclick="areum_open()"></div>
+        <div class="friends suha" onclick="suha_open()"></div>
+        <div class="friends sejin" onclick="sejin_open()"></div>
+        <!-- // friends_list -->
+
+
+        <!-- profile_layer -->
+        <div id="nayoung_layer" class="layer">
+          <div class="close_layer" onclick="nayoung_close()"></div>
+          <div class="chat">
+            <a href="../chat/friends/nayoung_chat.html"></a>
+          </div>
+        </div>
+        <div id="ejin_layer" class="layer">
+          <div class="close_layer" onclick="ejin_close()"></div>
+          <div class="chat">
+            <a href="../chat/friends/ejin_chat.html"></a>
+          </div>
+        </div>
+        <div id="junho_layer" class="layer">
+          <div class="close_layer" onclick="junho_close()"></div>
+          <div class="chat">
+            <a href="../chat/friends/junho_chat.html"></a>
+          </div>
+        </div>
+        <div id="seyoung_layer" class="layer">
+          <div class="close_layer" onclick="seyoung_close()"></div>
+          <div class="chat">
+            <a href="../chat/friends/seyoung_chat.html"></a>
+          </div>
+        </div>
+        <div id="areum_layer" class="layer">
+          <div class="close_layer" onclick="areum_close()"></div>
+          <div class="chat">
+            <a href="../chat/friends/areum_chat.html"></a>
+          </div>
+        </div>
+        <div id="suha_layer" class="layer">
+          <div class="close_layer" onclick="suha_close()"></div>
+          <div class="chat">
+            <a href="../chat/friends/suha_chat.html"></a>
+          </div>
+        </div>
+        <div id="sejin_layer" class="layer">
+          <div class="close_layer" onclick="sejin_close()"></div>
+          <div class="chat">
+            <a href="../fintech/send_money.html"></a>
+          </div>
+        </div>
+        <!-- // profile_layer -->
+
+
+        <div class="block" onclick="blockLayer()"></div>
+        
+
+        <!-- block_layer -->
+        <div id="block_layer">
+          <div class="block_back" onclick="blockBack()"></div>
+          <div class="block_link">
+            <a href="../friends/block.html"></a>
+          </div>
+        </div>
+        <!-- // block_layer -->
+
+
+        <!-- nav -->
+        <div class="nav friends_list">
+          <a href="#"></a>
+        </div>
+        <div class="nav chat_list">
+          <a href="chat_list.html"></a>
+        </div>
+        <div class="nav wallet">
+          <a href="wallet.html"></a>
+        </div>
+        <!-- // nav -->
+        
+
+      </div>
+      <!-- // display -->
+
+
+    </div>
+    <!-- // wrap -->
+
+
+    <script>
+      function addLayer() {
+        var addLayer = document.getElementById("add_friend_layer");
+        addLayer.classList.add("act");
+      }
+
+      function addBack() {
+        var addLayer = document.getElementById("add_friend_layer");
+        addLayer.classList.remove("act");
+      }
+
+      function nayoung_open() {
+        var layer = document.getElementById("nayoung_layer");
+        layer.classList.add("act");
+      }
+
+      function nayoung_close() {
+        var layer = document.getElementById("nayoung_layer");
+        layer.classList.remove("act");
+      }
+
+      function ejin_open() {
+        var layer = document.getElementById("ejin_layer");
+        layer.classList.add("act");
+      }
+
+      function ejin_close() {
+        var layer = document.getElementById("ejin_layer");
+        layer.classList.remove("act");
+      }
+
+      function junho_open() {
+        var layer = document.getElementById("junho_layer");
+        layer.classList.add("act");
+      }
+
+      function junho_close() {
+        var layer = document.getElementById("junho_layer");
+        layer.classList.remove("act");
+      }
+
+      function seyoung_open() {
+        var layer = document.getElementById("seyoung_layer");
+        layer.classList.add("act");
+      }
+
+      function seyoung_close() {
+        var layer = document.getElementById("seyoung_layer");
+        layer.classList.remove("act");
+      }
+
+      function areum_open() {
+        var layer = document.getElementById("areum_layer");
+        layer.classList.add("act");
+      }
+
+      function areum_close() {
+        var layer = document.getElementById("areum_layer");
+        layer.classList.remove("act");
+      }
+
+      function suha_open() {
+        var layer = document.getElementById("suha_layer");
+        layer.classList.add("act");
+      }
+
+      function suha_close() {
+        var layer = document.getElementById("suha_layer");
+        layer.classList.remove("act");
+      }
+
+      function sejin_open() {
+        var layer = document.getElementById("sejin_layer");
+        layer.classList.add("act");
+      }
+
+      function sejin_close() {
+        var layer = document.getElementById("sejin_layer");
+        layer.classList.remove("act");
+      }
+
+      function blockLayer() {
+        var addLayer = document.getElementById("block_layer");
+        addLayer.classList.add("act");
+      }
+
+      function blockBack() {
+        var addLayer = document.getElementById("block_layer");
+        addLayer.classList.remove("act");
+      }
+    </script>
+
+  </body>
+</html>
